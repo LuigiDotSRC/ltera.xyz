@@ -87,3 +87,51 @@ main {
   color: #0051a3;
   text-decoration: underline;
 }
+
+.post-description {
+  color: #666;
+  font-style: normal;
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  color: #333;
+  font-size: 1.15rem;
+  font-style: normal;
+  margin-bottom: 0.5rem;
+}
+
+.post-tags {
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.post-tags .devicon {
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2em 0.7em;
+  border-radius: 1em;
+  font-size: 0.98rem;
+  font-weight: 500;
+  background: #eee;
+  color: #333;
+}
+.tag-label {
+  margin-left: 0.5em;
+}
+
+/* Custom colors for specific tags */
+.tag-javascript { background: #e7d54e72; color: #222; }
+.tag-web        { background: #0070f3; color: #fff; }
+.tag-personal   { background: #e0e0e0; color: #333; }
+.tag-css        { background: #264de4; color: #fff; }
+.tag-python     { background: #306998; color: #fff; }
+.tag-test       { background: #2d2d2d; color: #fff; }

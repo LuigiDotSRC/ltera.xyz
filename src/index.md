@@ -3,7 +3,7 @@ title: ltera.xyz
 layout: layout.njk
 ---
 # Hello, I'm Luigi
-#### Software developer, Computer Science @TMU
+#### Software developer, Computer Science @ TMU
 
 ### /posts
 {% for post in collections.posts | reverse %}

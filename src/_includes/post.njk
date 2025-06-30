@@ -1,9 +1,29 @@
 ---
 layout: layout.njk
 ---
-<article class="post">
+<div>
   <a href="/" class="back-arrow" aria-label="Back to home">&larr; Back</a>
   <h1>{{ title }}</h1>
-  <p class="post-meta">{{ date.toISOString().slice(0, 10) }}</p>
+  <div class="post-meta">
+    Published: {{ page.date.toISOString().slice(0, 10) }}<br>
+    Last updated: {{ (page.dateLastModified or page.date).toISOString().slice(0, 10) }}
+  </div>
+
+  {% if tags %}
+  <div class="post-tags">
+    {% for tag in tags %}
+      {% if tag != "posts" %}
+        <span class="tag tag-{{ tag | slug }}">
+          {{ tag | tag_icon_html | safe }}
+          <span class="tag-label">{{ tag }}</span>
+        </span>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="post-description">{{ description }}</div>
+</div>
+<article class="post"> 
   {{ content | safe }}
 </article>
