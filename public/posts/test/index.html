@@ -1,18 +1,15 @@
----
-root: https://ltera.xyz
----
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>test post</title>
     <link rel="stylesheet" href="/styles/styles.css">
   </head>
   <body>
     <!-- top bar -->
     <div class="top-bar"> 
-      <a class="brand" href="{{ root }}">ltera.xyz</a>
+      <a class="brand" href="https://ltera.xyz">ltera.xyz</a>
       <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('.links').classList.toggle('open')">
         &#9776;
       </button>
@@ -23,7 +20,13 @@ root: https://ltera.xyz
       </div>
     </div>
     <main>
-      {{ content | safe }}
+      <article class="post">
+  <a href="/" class="back-arrow" aria-label="Back to home">&larr; Back</a>
+  <h1>test post</h1>
+  <p class="post-meta">2024-06-30</p>
+  <p>this is a test post</p>
+
+</article>
     </main>
   </body>
 </html>
