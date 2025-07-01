@@ -6,7 +6,7 @@ layout: layout.njk
   <h1>{{ title }}</h1>
   <div class="post-meta">
     Published: {{ page.date.toISOString().slice(0, 10) }}<br>
-    Last updated: {{ (page.dateLastModified or page.date).toISOString().slice(0, 10) }}
+    Last Updated: {{ updated.toISOString().slice(0, 10) }}
   </div>
 
   {% if tags %}
@@ -30,7 +30,6 @@ layout: layout.njk
     Table of Contents
   </button>
   <nav id="toc-list" class="toc-list">
-    <!-- The ToC will be injected here -->
     {{ content | toc | safe }}
   </nav>
 </div>

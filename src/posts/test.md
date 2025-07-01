@@ -3,6 +3,7 @@ title: test post
 layout: post.njk
 tags: [posts, test, javascript]
 description: this is a test descriptor
+updated: 2025-07-01
 ---
 ## this is a h2
 this is a test post
