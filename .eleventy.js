@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
     })
     
     eleventyConfig.addPassthroughCopy("styles")
+    eleventyConfig.addPassthroughCopy("img")
 
     eleventyConfig.addNunjucksFilter("tag_icon_html", function(tag) {
         switch(tag) {
