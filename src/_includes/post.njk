@@ -20,10 +20,37 @@ layout: layout.njk
       {% endif %}
     {% endfor %}
   </div>
-  {% endif %}
+  {% endif %} 
 
   <div class="post-description">{{ description }}</div>
+
+  <div class="toc-dropdown">
+  <button class="toc-toggle" type="button" aria-expanded="true" aria-controls="toc-list">
+    <span class="toc-arrow" aria-hidden="true"></span>
+    Table of Contents
+  </button>
+  <nav id="toc-list" class="toc-list">
+    <!-- The ToC will be injected here -->
+    {{ content | toc | safe }}
+  </nav>
 </div>
+  
+</div>
+<hr>
 <article class="post"> 
   {{ content | safe }}
 </article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.querySelector('.toc-toggle');
+  const tocList = document.getElementById('toc-list');
+  if (toggle && tocList) {
+    toggle.addEventListener('click', function() {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      tocList.hidden = expanded;
+    });
+  }
+});
+</script>

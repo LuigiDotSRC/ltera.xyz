@@ -1,4 +1,19 @@
-export default function(eleventyConfig) {
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const pluginTOC = require('eleventy-plugin-toc')
+
+module.exports = function(eleventyConfig) {
+    eleventyConfig.setLibrary(
+        'md',
+        markdownIt().use(markdownItAnchor)
+    )
+    eleventyConfig.addPlugin(pluginTOC, {
+        tags: ['h2', 'h3'],
+        wrapper: 'div',
+        flat: false,
+        ul: false,
+    })
+    
     eleventyConfig.addPassthroughCopy("styles")
 
     eleventyConfig.addNunjucksFilter("tag_icon_html", function(tag) {

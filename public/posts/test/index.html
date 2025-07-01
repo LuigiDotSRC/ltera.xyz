@@ -50,16 +50,48 @@
       
     
   </div>
-  
+   
 
   <div class="post-description">this is a test descriptor</div>
+
+  <div class="toc-dropdown">
+  <button class="toc-toggle" type="button" aria-expanded="true" aria-controls="toc-list">
+    <span class="toc-arrow" aria-hidden="true"></span>
+    Table of Contents
+  </button>
+  <nav id="toc-list" class="toc-list">
+    <!-- The ToC will be injected here -->
+    <div class="toc" >
+        <ol><li><a href="#this-is-a-h2">this is a h2</a><ol><li><a href="#a-subsection-(h3)">a subsection (h3)</a></li><li><a href="#a-second-subsection">a second subsection</a></li></ol></li></ol>
+      </div>
+  </nav>
 </div>
+  
+</div>
+<hr>
 <article class="post"> 
-  <h2>this is a h2</h2>
+  <h2 id="this-is-a-h2" tabindex="-1">this is a h2</h2>
 <p>this is a test post</p>
-<h3>a subsection (h3)</h3>
+<h3 id="a-subsection-(h3)" tabindex="-1">a subsection (h3)</h3>
+<p>this counts as an update</p>
+<h3 id="a-second-subsection" tabindex="-1">a second subsection</h3>
+<p>this one is about cats</p>
 
 </article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.querySelector('.toc-toggle');
+  const tocList = document.getElementById('toc-list');
+  if (toggle && tocList) {
+    toggle.addEventListener('click', function() {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      tocList.hidden = expanded;
+    });
+  }
+});
+</script>
     </main>
   </body>
 </html>

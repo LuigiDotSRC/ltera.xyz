@@ -135,3 +135,54 @@ main {
 .tag-css        { background: #264de4; color: #fff; }
 .tag-python     { background: #306998; color: #fff; }
 .tag-test       { background: #2d2d2d; color: #fff; }
+
+
+.toc-dropdown {
+  margin-bottom: 1.5em;
+  max-width: 400px;
+}
+
+.toc-toggle {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.toc-arrow {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  transition: transform 0.2s;
+  border: solid #333;
+  border-width: 0 0.15em 0.15em 0;
+  padding: 0.15em;
+  margin-right: 0.3em;
+  transform: rotate(45deg); /* Down arrow */
+  box-sizing: border-box;
+}
+.toc-toggle[aria-expanded="false"] .toc-arrow {
+  transform: rotate(-45deg); /* Right arrow */
+}
+
+.toc-list {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  padding: 1em;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: block;
+}
+
+.toc-list[hidden] {
+  display: none;
+}
