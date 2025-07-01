@@ -135,7 +135,7 @@ main {
 .tag-css        { background: #264de4; color: #fff; }
 .tag-python     { background: #306998; color: #fff; }
 .tag-test       { background: #2d2d2d; color: #fff; }
-
+.tag-technical  { background: #2a82da; color: #fff; }
 
 .toc-dropdown {
   margin-bottom: 1.5em;
@@ -190,7 +190,7 @@ main {
 .post-card {
   display: flex;
   align-items: stretch;
-  gap: 2em;
+  gap: 1em;
   padding: 1.5em;
   margin-bottom: 2em;
   max-width: 1100px;
